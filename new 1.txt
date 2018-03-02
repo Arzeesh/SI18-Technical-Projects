@@ -1,0 +1,22 @@
+
+class Pokemon { constructor(name, type, hp, def, atk, legend,nextPointer) 
+{ this.name = name; this.type = type; this.hp = hp; this.def = def; this.atk = atk; this.legend = legend; this.nextPointer=nextPointer; }
+ this.getName = function(){ return this.name; }; this.setName = function(name){ this.name = name; }; this.getType = function()
+ { return this.type; }; this.setType = function(type){ this.type = type; }; this.getHp = function(){ return this.hp; }; this.setHp = function(hp)
+ { this.hp = hp; }; this.getDef = function(){ return this.def; }; this.setDef = function(def){ this.def = def; }; this.getLegend = function()
+ { return this.legend; }; this.setName = function(legend){ this.legend= legend; }; function attack (Pokemon battle) 
+ { try { int hpOfPokemon = battle.hp - ( this.atk - battle.def); battle.hp = hpOfPokemon; return hpOfPokemon; throw 'myException'; 
+ // generates an exception } catch (e) { // statements to handle any exceptions logMyErrors(e); // pass exception object to error handler } }
+ function all(Pokemon var){ Pokemon node = var; console.log(node.name+ ' ' + node.type + ' ' + node.hp + ' ' + node.def + ' ' + node.atk + ' ' + node.legend);
+ while(node.nextPointer != null) 
+ { node = node.nextPointer; 
+ console.log(node.name+ ' ' + node.type + ' ' + node.hp + ' ' + node.def + ' ' + node.atk + ' ' + node.legend); } } }
+ var pokemon = []; // here we create instance function addPokemon(name, type, hp ,def ,atk ,legend){ var p = new Pokemon(name, type, hp ,def ,atk ,legend) ; 
+ 
+ // here we create instanc console.log(p); } //addPokemon("Golem", "Ground", 100,60,50,false); //addPokemon("Pikachu", "Electric", 100,60,50,false);
+ var Mew = new Pokemon("Mew", "Psychic", 500,140,85,false,true,null); var Mewtwo = new Pokemon("Mewtwo", "Psychic", 500,150,90,false,true,Mew); 
+ var Chizard = new Pokemon("Chizard", "fire", 300,80,60,false,Mewtwo); var Golem = new Pokemon("Golem", "Ground", 100,60,50,false,Chizard); 
+ var Pickachu = new Pokemon("Pikachu", "Electric", 100,60,50,false, Golem); //var pikachu = new Pokemon("Pikachu", "Electric", 60,40,30,false); 
+ //var golem = new Pokemon("Golem", "Ground", 100,60,50,false); //console.log(" "+ pikachu.name + " "+ pikachu.hp); 
+ //console.log(" "+ golem.name + " "+ golem.hp); //function attack(Pokemon target) // (target.hp - (myPokemon[0].atk - target.def)); //} 
+ //function aliveCheck() { // // if (myPokemon.hp > 0) { // return true; // } // else { // return 0; // 
